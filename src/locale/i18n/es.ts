@@ -44,6 +44,7 @@ const es = {
     footer: {
       copyright:
         "© 2025 Impacta Una Vida. Un ministerio de esperanza y fe en Cristo.",
+      language: "Idioma",
     },
   },
 };
