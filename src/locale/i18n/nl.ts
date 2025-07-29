@@ -1,4 +1,9 @@
 const nl = {
+  meta: {
+    title: "Impacteer Een Leven",
+    description:
+      "Een bediening van hoop en geloof in Christus, gericht op degenen die het meest nodig hebben.",
+  },
   landing: {
     hero: {
       title: "Jezus roept je vandaag!",

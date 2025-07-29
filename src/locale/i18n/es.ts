@@ -1,4 +1,9 @@
 const es = {
+  meta: {
+    title: "Impacta Una Vida",
+    description:
+      "Un ministerio de esperanza y fe en Cristo, alcanzando a quienes más lo necesitan.",
+  },
   landing: {
     hero: {
       title: "¡Jesús te llama hoy!",

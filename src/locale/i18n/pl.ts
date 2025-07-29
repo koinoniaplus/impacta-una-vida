@@ -1,4 +1,9 @@
 const pl = {
+  meta: {
+    title: "Impact One Life",
+    description:
+      "Służba nadziei i wiary w Chrystusa, docierająca do tych, którzy najbardziej tego potrzebują.",
+  },
   landing: {
     hero: {
       title: "Jezus dziś do Ciebie woła!",
@@ -42,7 +47,7 @@ const pl = {
       error: "Wystąpił błąd podczas wysyłania wiadomości. Spróbuj ponownie.",
     },
     footer: {
-      copyright: "© 2025 Impacta Una Vida. Służba nadziei i wiary w Chrystusa.",
+      copyright: "© 2025 Impact One Life. Służba nadziei i wiary w Chrystusa.",
       language: "Język",
     },
   },

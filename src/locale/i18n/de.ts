@@ -1,6 +1,9 @@
-import { languages } from ".";
-
 const de = {
+  meta: {
+    title: "Impactiere ein Leben",
+    description:
+      "Ein Dienst der Hoffnung und des Glaubens an Christus, der sich an Bedürftige richtet.",
+  },
   landing: {
     hero: {
       title: "Jesus ruft dich heute!",

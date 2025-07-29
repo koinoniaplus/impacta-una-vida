@@ -1,6 +1,9 @@
-import { languages } from ".";
-
 const fr = {
+  meta: {
+    title: "Impacte Une Vie",
+    description:
+      "Un ministère d'espoir et de foi en Christ, atteignant ceux qui en ont le plus besoin.",
+  },
   landing: {
     hero: {
       title: "Jésus t’appelle aujourd’hui !",
