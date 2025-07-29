@@ -8,7 +8,7 @@ import TextSection from "@/components/TextSection";
 
 type Props = {
   params: Promise<{
-    lang: "es" | "en";
+    lang: "es" | "en" | "pl" | "nl" | "it" | "fr" | "de" | "pt";
   }>;
 };
 
@@ -18,7 +18,7 @@ export function generateStaticParams() {
 
 export default async function Page({ params }: Props) {
   const { lang } = await params;
-  const t = translations[lang] ?? translations["es"];
+  const t = translations[lang] ?? translations["en"];
 
   return (
     <main className="px-4 sm:px-8 py-8 space-y-16 max-w-3xl mx-auto">
