@@ -16,18 +16,30 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const missingLocale = languages.every(
-    (lang) => !pathname.startsWith(`/${lang}`)
+  const segments = pathname.split("/").filter(Boolean);
+  const maybeLang = segments[0];
+
+  const isValidLocale = languages.includes(
+    maybeLang as (typeof languages)[number]
   );
 
-  if (missingLocale) {
-    const locale = "es";
-    return NextResponse.redirect(new URL(`/${locale}${pathname}`, request.url));
+  if (!isValidLocale) {
+    const acceptLang = request.headers.get("accept-language") || "";
+    const preferredLang = acceptLang.split(",")[0].split("-")[0];
+    const locale = languages.includes(
+      preferredLang as (typeof languages)[number]
+    )
+      ? preferredLang
+      : "en";
+    // Quitamos el primer segmento inválido (maybeLang) y reconstruimos el path
+    const newPath = segments.slice(1).join("/"); // el resto del path
+    const finalPath = `/${locale}${newPath ? `/${newPath}` : ""}`;
+    return NextResponse.redirect(new URL(finalPath, request.url));
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/((?!static|api|_next).*)"],
+  matcher: ["/((?!static|api|_next|favicon.ico).*)"],
 };

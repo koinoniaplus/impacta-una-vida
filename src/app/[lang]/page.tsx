@@ -1,5 +1,10 @@
 import { translations } from "@/locale/i18n";
-import ContactForm from "./contactForm";
+import Hero from "@/components/Hero";
+import Encouragements from "@/components/Encouragements";
+import CallToAction from "@/components/CallToAction";
+import ContactForm from "@/components/ContactForm";
+import Footer from "@/components/Footer";
+import TextSection from "@/components/TextSection";
 
 type Props = {
   params: Promise<{
@@ -16,11 +21,13 @@ export default async function Page({ params }: Props) {
   const t = translations[lang] ?? translations["es"];
 
   return (
-    <main className="p-6 text-center space-y-4">
-      <h1 className="text-3xl font-bold">{t.landing.title}</h1>
-      <p>{t.landing.description}</p>
-
-      <ContactForm />
+    <main className="px-4 sm:px-8 py-8 space-y-16 max-w-3xl mx-auto">
+      <Hero t={t} />
+      <TextSection t={t} />
+      <CallToAction t={t} />
+      <Encouragements t={t} />
+      <ContactForm t={t} />
+      <Footer t={t} />
     </main>
   );
 }
